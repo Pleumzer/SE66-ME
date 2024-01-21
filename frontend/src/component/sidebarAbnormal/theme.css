@@ -1,0 +1,43 @@
+.boxmessage {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.ant-menu {
+    background-color: #424530;
+}
+.ant-menu-item:hover {
+    background-color: #E48F44 !important;
+    color: black !important;
+}
+
+.ant-menu-item.ant-menu-item-selected {
+    background-color: #E48F44;
+    color: black;
+}
+
+.ant-menu-item {
+    background-color: #FFEFCD;
+    color: black;
+}
+
+.image-position {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-top: 5%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.nameEmployee {
+    font-size: 2.2vh;
+    color: #FFEFCD;
+}
+
+.institute {
+    font-size: 2.2vh;
+    color: #FFEFCD;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
