@@ -11,9 +11,9 @@ import (
 type Animal struct {
 	gorm.Model
 	Animal_Profile       string		
-	Animal_Biomial_Name  string		`valid:"required~Animal_Biomial_Name is required~กรุณากรอกชื่อทวินามของสัตว์ !,maxstringlength(50)~ชื่อทวินามของสัตว์ต้องยาวไม่เกิน 50 อักษร"`
-	Animal_Name          string		`valid:"required~Animal_Name is required~กรุณากรอกชื่อของสัตว์ !,maxstringlength(50)~ชื่อของสัตว์ต้องยาวไม่เกิน 50 อักษร"`
-	Animal_Abode         string		`valid:"required~Animal_Abode is required~กรุณากรอกถิ่นฐานของสัตว์ !,maxstringlength(50)~ถิ่นฐานต้องยาวไม่เกิน 50 อักษร"`
+	Animal_Biomial_Name  string		`valid:"required~กรุณากรอกชื่อทวินามของสัตว์ !,maxstringlength(50)~อนุญาตให้กรอกชื่อทวินามได้ไม่เกิน 50 ตัวอักษร!"`
+	Animal_Name          string		`valid:"required~กรุณากรอกชื่อของสัตว์!,maxstringlength(50)~อนุญาตให้กรอกชื่อสัตว์ได้ไม่เกิน 50 ตัวอักษร!"`
+	Animal_Abode         string		`valid:"required~กรุณากรอกถิ่นฐานของสัตว์ !,maxstringlength(50)~ถิ่นฐานต้องยาวไม่เกิน 50 อักษร!"`
 	Animal_Register_Date time.Time
 	Animal_Birthday_Date time.Time
 

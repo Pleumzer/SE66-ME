@@ -33,8 +33,8 @@ func TestAnimalCorrectData(t *testing.T) {
 
 		ok, err := govalidator.ValidateStruct(animal)
 
-		g.Expect(ok).NotTo(BeTrue())
-		g.Expect(err).NotTo(BeNil())
+		g.Expect(ok).To(BeTrue())
+		g.Expect(err).To(BeNil())
 	})
 	t.Run("Animalname is required",func(t *testing.T){
 		var animalSexID uint = 1
@@ -58,7 +58,7 @@ func TestAnimalCorrectData(t *testing.T) {
 
 		g.Expect(ok).NotTo(BeTrue())
 		g.Expect(err).NotTo(BeNil())
-		g.Expect(err.Error()).To(Equal("กรุณากรอกชื่อสัตว์!"))
+		g.Expect(err.Error()).To(Equal("กรุณากรอกชื่อของสัตว์!"))
 	})
 
 	t.Run("Animal_Biomial_Name  pattern is not true",func(t *testing.T){
@@ -86,7 +86,7 @@ func TestAnimalCorrectData(t *testing.T) {
 		g.Expect(err.Error()).To(Equal("อนุญาตให้กรอกชื่อทวินามได้ไม่เกิน 50 ตัวอักษร!"))
 	})
 
-	t.Run("Animalname pattern is not true",func(t *testing.T){
+	t.Run("Animal_Name pattern is not true",func(t *testing.T){
 		var animalSexID uint = 1
 		var animalTypeID uint = 2
 		var reproductionTypeID uint = 1
@@ -111,7 +111,7 @@ func TestAnimalCorrectData(t *testing.T) {
 		g.Expect(err.Error()).To(Equal("อนุญาตให้กรอกชื่อสัตว์ได้ไม่เกิน 50 ตัวอักษร!"))
 	})
 
-	t.Run("Animalname pattern is not true",func(t *testing.T){
+	t.Run("Animal_Abode pattern is not true",func(t *testing.T){
 		var animalSexID uint = 1
 		var animalTypeID uint = 2
 		var reproductionTypeID uint = 1
@@ -119,8 +119,8 @@ func TestAnimalCorrectData(t *testing.T) {
 		animal := entity.Animal{
 			Animal_Profile:				"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...",       		
 			Animal_Biomial_Name: 		"Spheniscidae" ,		
-			Animal_Name:				"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", //>NULL          		
-			Animal_Abode:				"ขั้วโลกเหนือ",         		
+			Animal_Name:				"ดุ๋ย", //>NULL          		
+			Animal_Abode:				"ฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟฟ",         		
 			Animal_Register_Date: 		time.Now().UTC(),
 			Animal_Birthday_Date:  		time.Now().UTC(),
 
@@ -133,7 +133,7 @@ func TestAnimalCorrectData(t *testing.T) {
 
 		g.Expect(ok).NotTo(BeTrue())
 		g.Expect(err).NotTo(BeNil())
-		g.Expect(err.Error()).To(Equal("อนุญาตให้กรอกชื่อสัตว์ได้ไม่เกิน 50 ตัวอักษร!"))
+		g.Expect(err.Error()).To(Equal("ถิ่นฐานต้องยาวไม่เกิน 50 อักษร!"))
 	})
 }
 // func TestInCorrectAnimalData(t *testing.T){
